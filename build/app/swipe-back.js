@@ -1,0 +1,2 @@
+/*! Built with http://stenciljs.com */
+const{h:t}=window.App;import{createGesture as e}from"./gesture.js";function n(t,n,o,r,i,a){const u=t.ownerDocument.defaultView;return e({el:t,queue:n,gestureName:"goback-swipe",gesturePriority:30,threshold:10,canStart:function(t){return t.startX<=5e3&&o()},onStart:r,onMove:function(t){i(t.deltaX/u.innerWidth)},onEnd:function(t){const e=u.innerWidth,n=t.deltaX/e,o=t.velocityX,r=o>=0&&(o>.2||t.deltaX>e/2),i=(r?1-n:n)*e;let c=0;if(i>5){const t=i/Math.abs(o);c=Math.min(t,300)}a(r,n,c)}})}export{n as createSwipeBackGesture};
